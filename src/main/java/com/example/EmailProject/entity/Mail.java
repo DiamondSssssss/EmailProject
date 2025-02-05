@@ -29,6 +29,4 @@ public class Mail {
     @Column(name = "Description",nullable = false)
     private String description;
 
-    @Column(name = "OfWebsite",nullable = false)
-    private String ofwebsite;
 }
