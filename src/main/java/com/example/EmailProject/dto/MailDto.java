@@ -13,8 +13,5 @@ import java.util.UUID;
 @Builder
 
 public class MailDto {
-    private UUID MailId;
     private String Email;
-    private String Title;
-    private String Description;
 }
