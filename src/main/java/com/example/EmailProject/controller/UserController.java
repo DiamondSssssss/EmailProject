@@ -21,8 +21,11 @@ public class UserController {
     public ResponseEntity<?> createUser(@RequestBody UserDto userDto) {
         try {
             return new ResponseEntity<>(userService.createUser(userDto), HttpStatus.CREATED);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.TOO_MANY_REQUESTS);
         } catch (Exception e) {
             return new ResponseEntity<>("Lỗi xử lý yêu cầu: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }
